@@ -5,7 +5,7 @@ interface ILegendProps {
 }
 
 export const Container = styled.div`
-  width: 48%;
+  width: 49%;
   height: 260px;
 
   margin: 10px 0;
@@ -29,7 +29,6 @@ export const SideLeft = styled.aside`
 export const LegendContainer = styled.ul`
   list-style: none;
   height: 175px;
-  padding-right: 15px;
 
   overflow-y: scroll;
 
@@ -57,8 +56,9 @@ export const Legend = styled.li<ILegendProps>`
   > div {
     background-color: ${props => props.color};
 
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
+    margin-top: 10px;
     border-radius: 5px;
 
     font-size: 18px;
@@ -69,10 +69,13 @@ export const Legend = styled.li<ILegendProps>`
   }
 
   > span {
-    margin-left: 5px;
+    font-size: 18px;
+    margin-left: 10px;
   }
 `;
 
 export const SideRight = styled.main`
-  
+  display: flex;
+  flex: 1;
+  justify-content: center;
 `;

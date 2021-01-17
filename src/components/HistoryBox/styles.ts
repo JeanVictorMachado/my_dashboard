@@ -15,6 +15,11 @@ export const Container = styled.div`
 
   background-color: ${props => props.theme.colors.tertiary};
   color: ${props => props.theme.colors.white};
+
+  @media(max-width: 1200px) {
+    margin: 5px 0;
+    padding: 20px 20px 95px 20px;
+  }
 `;
 
 export const Header = styled.header`
@@ -23,12 +28,20 @@ export const Header = styled.header`
 
   display: flex;
   justify-content: space-between;
+
+  @media(max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 
 export const LegendContainer = styled.ul`
   list-style: none;
 
   display: flex;
+
+  @media(max-width: 1200px) {
+    margin-top: 10px;
+  }
 `;
 
 export const Legend = styled.li<ILegendProps>`
@@ -55,5 +68,19 @@ export const Legend = styled.li<ILegendProps>`
   > span {
     font-size: 18px;
     margin-left: 10px;
+  }
+
+  @media(max-width: 1200px) {
+    margin: 0 10px 7px 0;
+
+    > div {
+    width: 25px;
+    height: 25px;
+  }
+
+    > span {
+      margin-right: 10px;
+      margin-left: 7px;
+    }
   }
 `;

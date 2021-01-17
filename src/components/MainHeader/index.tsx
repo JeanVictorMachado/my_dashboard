@@ -30,6 +30,8 @@ const MainHeader: React.FC = () => {
     return emojis[indice];
   }, []);
 
+  const userEmail = localStorage.getItem('@my-dashboard:email');
+
   return (
     <Container>
       <Toogle
@@ -41,7 +43,7 @@ const MainHeader: React.FC = () => {
 
       <Profile>
         <Welcome>Olá, {emoji}</Welcome>
-        <UserName>Rodrigo Gonçalves</UserName>
+        <UserName>{userEmail}</UserName>
       </Profile>
     </Container>
   );

@@ -2,13 +2,16 @@ import React from 'react';
 
 import Logo from '../../assets/logo.svg';
 
+import { useAuth } from  '../../hooks/auth';
+
 import { 
   Container, 
   Header, 
   LogoImg, 
+  Title,
   MenuContainer,
   MenuItemLink,
-  Title
+  MenuItemButton
 } from './styles';
 
 import {
@@ -19,15 +22,18 @@ import {
 } from 'react-icons/md';
 
 const Aside: React.FC = () => {
+
+  const { signOut } = useAuth();
+
   return (
-    <Container>
+    <Container menuIsOpen={false}>
       <Header>
         <LogoImg src={Logo} alt="Logo My Dashboard"/>
         <Title>My DashBoard</Title>
       </Header>
 
       <MenuContainer>
-        <MenuItemLink href="/dashboard">
+        <MenuItemLink href="/">
           <MdDashboard/>
           Dashboard
         </MenuItemLink>
@@ -42,10 +48,10 @@ const Aside: React.FC = () => {
           Saídas
         </MenuItemLink>
 
-        <MenuItemLink href="#">
+        <MenuItemButton onClick={ signOut }>
           <MdExitToApp/>
           Sair
-        </MenuItemLink>
+        </MenuItemButton>
 
       </MenuContainer>
     </Container>

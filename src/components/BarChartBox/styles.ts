@@ -16,6 +16,12 @@ export const Container = styled.div`
   color: ${props => props.theme.colors.white};
 
   display: flex;
+
+  @media(max-width: 770px) {
+    width: 100%;
+    height: 200px;
+    margin: 5px 0;
+  }
 `;
 
 export const SideLeft = styled.aside`
@@ -71,6 +77,13 @@ export const Legend = styled.li<ILegendProps>`
   > span {
     font-size: 18px;
     margin-left: 10px;
+  }
+
+  @media(max-width: 770px) {
+
+    > div {
+      height: 30px;
+    }
   }
 `;
 

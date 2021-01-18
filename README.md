@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Aplicativo em funcionamento:
+
+<p><a target="_blank" rel="noopener noreferrer" href=""><img src="Dashboard-udemy.gif" alt="" style="max-width:100%;"></a></p>
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

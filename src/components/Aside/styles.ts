@@ -4,6 +4,11 @@ interface IContainerProps {
   menuIsOpen: boolean;
 }
 
+interface IThemeToggleFooterProps {
+  menuIsOpen: boolean;
+}
+
+
 export const Container = styled.div<IContainerProps>`
   grid-area: AS;
 
@@ -17,6 +22,8 @@ export const Container = styled.div<IContainerProps>`
     padding-left: 7px;
     position: fixed;
     z-index: 2;
+
+    width: 155px;
 
     height: ${props => props.menuIsOpen ? '100vh' : '70px'};
     overflow: hidden;
@@ -34,17 +41,16 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
 
-  @media(max-width: 600px) {
+  /* @media(max-width: 600px) {
     width: 150px;
-  }
+  } */
 `;
 
 export const LogoImg = styled.img`
   height: 40px;
 
   @media(max-width: 600px) {
-    height: 30px;
-    margin-left: 5px;
+    display: none;
   }
 `;
 
@@ -106,5 +112,42 @@ export const MenuItemButton = styled.button`
   > svg {
     font-size: 18px;
     margin-right: 5px;
+  }
+`;
+
+export const ToggleMenu = styled.button`
+  display: none;
+
+  @media(max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    margin-left: 5px;
+
+    border-radius: 5px;
+    font-size: 22px;
+
+    background-color: ${props => props.theme.colors.warning};
+    color: ${props => props.theme.colors.white};
+
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+`;
+
+export const ThemeToggleFooter = styled.footer<IThemeToggleFooterProps>`
+  display: none;
+  position: absolute;
+  bottom: 30px;
+
+  @media(max-width: 600px) {
+    display: ${props => props.menuIsOpen ? 'flex' : 'none'};
   }
 `;
